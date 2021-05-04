@@ -75,8 +75,8 @@ article {
 .intro-p{
   position: absolute;
   width: 60vw;
-  top: 35vh;
-  left: 4vw;
+ margin-top: 1rem;
+
 
   p{
     font-weight: 400;
@@ -140,7 +140,8 @@ article {
 
 .agency {
   margin: 0;
-min-height: 105vh;
+  min-height: 100vh;
+  max-height: 105vh;
   padding:0 0 3vh;
   flex-direction: column;
   font-family: $font-stack;
@@ -678,4 +679,257 @@ color: black;
   .agency_button{
     margin-top: 2rem;
   }
+}
+
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+
+  .intro-p{
+
+    p{
+      font-size: 1.2rem;
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+  }
+  .header {
+
+    .header_text {
+
+
+      h1 {
+        font-size: 3.2rem;
+        margin: 1vh 0 0 0;
+
+      }
+    }
+  }
+
+  .agency_name {
+    padding:0 5vw ;
+
+    h3 {
+
+    }
+  }
+
+  .monica {
+
+    .agency_button {
+      margin-top: 6rem;
+
+    }
+
+    .agency_sample {
+      width: 90vw;
+      height:55vh;
+      overflow: visible;
+
+      img {
+
+      }
+    }
+  }
+
+  .tp {
+       .agency_name{
+      padding-top: 4rem;
+      }
+    }
+
+
+  .gmac {
+
+
+    .agency_button {
+     margin-top: 3rem;
+
+      }
+
+
+    .agency_sample {
+      width:80vw;
+      height:50vh;
+      img {
+left: 10vw;
+        top: 0;
+      }
+    }
+
+  }
+
+  .iss {
+    background-color: #fff;
+
+
+    .agency_name{
+      padding-top: 5vh;
+
+    }
+
+    .agency_sample {
+      height: 40vh;
+      left: 5vw;
+    }
+
+    .agency_button {
+      margin: 3vh 0 1rem 0;
+    }
+  }
+
+  .aspen  {
+    background-color:#fff;
+    .agency_name{
+      padding-top: 5vh;
+    }
+
+    .agency_button {
+      margin-top: 90vh;
+      z-index: 9;
+
+    }
+
+
+    .agency_sample {
+      width: 60vw;
+      height:90vh;
+      overflow: visible;
+      left: 20vw;
+
+    }
+  }
+  .contact{
+
+
+    h3{
+      font-size: 3.6rem;
+    }
+
+    .agency_button {
+      margin-top: 10rem;
+
+    }
+  }
+
+
+  #tp{
+
+    .portfolio_name{
+      height: 15vh;
+    }
+
+    .redefining{
+
+      .portfolio_image {
+        height:55vh;
+        width: 60%;
+        top: 5vh;
+
+        img{
+          top: -50;
+          left: 10vw;
+          width: 105%;
+
+        }
+      }
+    }
+
+    .icon{
+
+      .portfolio_image {
+        left: 15vw;
+
+        img{
+          width: 80%;
+        }
+      }
+
+      }
+
+    .collateral{
+
+      .portfolio_image {
+        left: 10vw;
+
+        img{
+          width: 80%;
+
+        }
+      }
+
+    }
+  }
+
+  #gmac{
+
+    .portfolio_name{
+      height: 15vh;
+    }
+
+    .portfolio_image {
+      left: 20vw;
+
+
+      img{
+
+        width: 75%;
+
+      }
+    }
+
+  }
+
+
+
+  #aspen{
+
+    .portfolio_name{
+      height: 15vh;
+
+    }
+
+    .portfolio_image {
+      height:50vh;
+      width: 80vw;
+      position: absolute;
+      top:30vh;
+      left: 20vw;
+
+      .small{
+        width: 65%;
+        left: 5vw;
+      }
+
+      img{
+        width:75%;
+
+      }
+    }
+  }
+  #iss {
+
+    .portfolio_name {
+      height: 15vh;
+    }
+  }
+
+
+    .fixed_port {
+    font-size: 2rem;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /* Styles */
 }

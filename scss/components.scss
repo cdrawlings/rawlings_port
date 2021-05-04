@@ -96,6 +96,7 @@ article {
     position: absolute;
     top: 10vh;
     left: 4vw;
+    color:  #339799;
 
     h1 {
       font-size: 2.8rem;
@@ -139,11 +140,13 @@ article {
 
 .agency {
   margin: 0;
-min-height: 75vh;
+min-height: 105vh;
   padding:0 0 3vh;
   flex-direction: column;
   font-family: $font-stack;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
 
   p{
     font-size: .8rem;
@@ -156,6 +159,7 @@ min-height: 75vh;
   }
 }
 .agency_text {
+
 padding: 0 5vw;
 }
 
@@ -218,8 +222,8 @@ background-color: #1c5253;
 
   .agency_button {
     border: 2px solid white;
-    color: wite;
-    margin: 0 0 1rem 20vw;
+    color: white;
+
 
     a{
 
@@ -297,8 +301,8 @@ background-color: #1c5253;
   }
 
   .agency_sample {
-    width: 90vw;
-    height:60vh;
+    width: 100vw;
+    height:70vh;
     overflow: hidden;
     position: relative;
     z-index: 1; /* fix for Safari */
@@ -313,7 +317,7 @@ background-color: #1c5253;
   .agency_button {
     border: 2px solid $color-tp;
     color: $color-tp;
-    margin: 0 0 1rem 20vw;
+    margin: 0 0 1rem 0vw;
 
     a{
 
@@ -335,7 +339,7 @@ background-color: #1c5253;
   .agency_button {
     border: 2px solid white;
     color: wite;
-    margin: 0 0 1rem 20vw;
+
 
     a {
 
@@ -421,7 +425,7 @@ background-color: #1c5253;
   .agency_button {
     border: 2px solid #004f2d;
     color: #004f2d;
-    margin: 0 0 1rem 20vw;
+
 
     a {
 
@@ -666,4 +670,12 @@ color: black;
   }
 }
 
+.contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  .agency_button{
+    margin-top: 2rem;
+  }
+}

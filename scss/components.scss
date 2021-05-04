@@ -12,6 +12,7 @@ $color-tp: #0075b0;
 .accordian-panel{
   font-size: 1rem;
   color: #5fa5d3;
+  display: none;
 
   padding: 1rem 5vw 1rem;
 
@@ -80,7 +81,7 @@ article {
 
   p{
     font-weight: 400;
-    font-size: .8rem;
+    font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 1.2rem;
     color:#339799;
@@ -142,36 +143,39 @@ article {
   margin: 0;
   min-height: 100vh;
   max-height: 105vh;
-  padding:0 0 3vh;
+  padding: 0 0 3vh;
   flex-direction: column;
   font-family: $font-stack;
   background-color: #fff;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 22vh 63vh 15vh;
+  grid-template-areas:
+      "name"
+      "image"
+      "button";
 
-  p{
+  p {
     font-size: .8rem;
     line-height: 1.5rem;
     font-weight: 400;
     padding-left: 3vw;
     margin: .3rem 0;
-
-
   }
 }
 .agency_text {
-
-padding: 0 5vw;
+  grid-area: text;
+padding: 0 5vw 4vw;
 }
 
 .agency_name {
   grid-area: name;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   padding: 5vh 5vw 0;
 
   h3 {
-    font-size: 2.3rem;
+    font-size: 1.7rem;
   }
 }
 .agency_tools {
@@ -188,6 +192,7 @@ padding: 0 5vw;
   padding: 1rem 2rem;
   align-self: center;
   width: 35vw;
+  margin:0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,7 +203,7 @@ padding: 0 5vw;
 }
 .agency_sample {
   width: 90vw;
-
+grid-area: image;
   overflow: hidden;
   position: relative;
   z-index: 1; /* fix for Safari */
@@ -225,7 +230,6 @@ background-color: #1c5253;
     border: 2px solid white;
     color: white;
 
-
     a{
 
     }
@@ -235,15 +239,16 @@ background-color: #1c5253;
       color: #5fa5d3;
   }
   .agency_sample {
-    width: 90vw;
-    height:60vh;
+    width: 100vw;
+    height:70vh;
     overflow: hidden;
     position: relative;
     z-index: 1; /* fix for Safari */
 
     img {
-      left: 0;
+      left: -9vw;
       top: 5vh;
+      width: 120%;
     }
   }
 }
@@ -259,7 +264,6 @@ background-color: #1c5253;
 
 
   .accordian-panel {
-
     color: #f9b4b3;
   }
 
@@ -272,8 +276,9 @@ background-color: #1c5253;
     z-index: 1; /* fix for Safari */
 
     img {
-      left: 0;
+      left: -27vw;
       top: 5vh;
+      width: 155%;
     }
   }
 }
@@ -304,13 +309,13 @@ background-color: #1c5253;
   .agency_sample {
     width: 100vw;
     height:70vh;
-    overflow: hidden;
-    position: relative;
-    z-index: 1; /* fix for Safari */
+
 
     img {
-      left: 0;
+      left: -15vw;
       top: 5vh;
+      width: 130%;
+
     }
   }
 
@@ -318,7 +323,7 @@ background-color: #1c5253;
   .agency_button {
     border: 2px solid $color-tp;
     color: $color-tp;
-    margin: 0 0 1rem 0vw;
+    z-index: 3;
 
     a{
 
@@ -348,15 +353,14 @@ background-color: #1c5253;
   }
 
   .agency_sample {
-    width: 90vw;
-    height:50vh;
-    overflow: hidden;
-    position: relative;
-    z-index: 1; /* fix for Safari */
+    width: 100vw;
+    height:70vh;
+
 
     img {
-      left: 0;
+      left: -12vw;
       top: 5vh;
+      width: 125%;
     }
   }
 
@@ -378,6 +382,7 @@ background-color: #1c5253;
     color: #99ddff;
   }
   .agency_sample {
+    margin-top: 30vw;
     height: 22vh;
     left: 5vw;
 
@@ -391,7 +396,7 @@ background-color: #1c5253;
   .agency_button {
     border: 2px solid #01479F;
     color: #01479F;
-    margin: 3vh 0 1rem 20vw;
+    margin: 3vh auto 1rem;
 
     a{
 
@@ -411,8 +416,8 @@ background-color: #1c5253;
 .aspen  {
   background-color:#fff;
 
-
   .agency_name{
+
     background-color: #004f2d;
   }
   .agency_text{
@@ -426,6 +431,8 @@ background-color: #1c5253;
   .agency_button {
     border: 2px solid #004f2d;
     color: #004f2d;
+    margin-top: 2rem;
+    z-index: 3;
 
 
     a {
@@ -439,16 +446,17 @@ background-color: #1c5253;
 
 
   .agency_sample {
-    width: 70vw;
+    width: 65vw;
     height:80vh;
-    left: 15vw;
     overflow: hidden;
     position: relative;
     z-index: 1; /* fix for Safari */
+    left: 18vw;
 
     img {
       left: 0;
       top: 5vh;
+
     }
   }
 }
@@ -503,75 +511,80 @@ background-color: #1c5253;
 
 .fixed_port {
   position: absolute;
-  top: 3rem;
-  left: 3rem;
-  font-size: 3rem;
+  padding: 3vh 5vw 0;
+  font-size: 1.1rem;
+  height: 15vh;
   z-index: 10;
   color: white;
+  width: 300vw;
+
+  h1{
+    line-height: 1.1;
+    padding-top: .5rem;
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
+.portfolio{
+  font-size: 2rem;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 100vw;
+  grid-template-rows: 22vh 63vh 15vh;
+  grid-template-areas:
+      "name"
+      "image"
+      "text";
+
 }
 
+
 .portfolio_name{
-  width: 100%;
-  height: 25vh;
-  color: white;
+  grid-area: name;
 
   h4{
-    padding: 17vh 0 0 5vw;
-    font-size: 3rem;
-    font-weight: 400;
-    z-index: 8;
 
   }
 }
 .portfolio_image{
   grid-area: image;
-  position: relative;
-
-  z-index: 1; /* fix for Safari */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow:visible;
+  top: -7vh;
 
   img {
-    left: 0;
-    top: 0;
-    width: 100%;
-    position: absolute;
+    width: 120%;
 
   }
 }
 .portfolio_text{
-  margin-top: 5rem;
-  color:$color-tp;
-  font-size: 2.3rem;
-  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 #tp{
 
-  .portfolio_name{
-    width: 100%;
+  .fixed_port {
     background-color: $color-tp;
   }
 
+  .portfolio_name{
+
+  }
   .redefining{
 
-    .portfolio_image {
-      height:75vh;
-      width: 95%;
-      padding-bottom: 10vh;
-      top: 5vh;
-
-      img{
-        object-fit: contain;
-        object-position: 50% 50%;
-        top: -50;
-
-      }
-    }
     .portfolio_text{
       position: absolute;
       top: 85vh;
       left: 10vw;
       z-index: 3;
-color: black;
+      color: black;
     }
   }
 
@@ -582,12 +595,13 @@ color: black;
       width: 90vw;
       position: absolute;
       padding-bottom: 10vh;
-      top: 30vh;
+      top: 5vh;
       left: 3vw;
 
       img{
         object-position: 50% 50%;
         top: -50;
+        width: 100%;
 
       }
     }
@@ -606,12 +620,15 @@ color: black;
       width: 90vw;
       position: absolute;
       padding-bottom: 10vh;
-      top: 30vh;
+      top: 5vh;
       left: 3vw;
+      overflow: visible;
+
 
       img{
         object-position: 50% 50%;
         top: -50;
+        width: 100%;
 
       }
     }
@@ -626,22 +643,24 @@ color: black;
 }
 
 #gmac{
+  .fixed_port {
+  background-color: #004f2d;
+  }
 
   .portfolio_name{
-    width: 100%;
-    background-color: $color-tp;
+
   }
 
   .portfolio_image {
     height:50vh;
-    width: 90vw;
+
     position: absolute;
-    top:30vh;
+    top:0vh;
     left: 5vw;
 
-
     img{
-      object-fit: contain;
+      width: 90%;
+      box-shadow: 3px 3px 7px #333;
 
     }
   }
@@ -653,8 +672,7 @@ color: black;
 #aspen{
 
   .portfolio_name{
-    width: 100%;
-    background-color: #004f2d;
+
   }
 
   .portfolio_image {
@@ -674,262 +692,214 @@ color: black;
 .contact{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 
-  .agency_button{
-    margin-top: 2rem;
-  }
-}
+    .contact_text{
+      font-size: 1.8rem;
+      width: 45vw;
+      padding-left: 5vw;
+    }
 
-
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-
-
-  .intro-p{
-
-    p{
-      font-size: 1.2rem;
-      line-height: 2;
-      margin-bottom: 1.2rem;
+    .agency_button{
+      margin: 4rem 0 0;
+      padding-left: 0;
     }
   }
-  .header {
 
-    .header_text {
+/*  Desktops */
+@media screen
+and (min-device-width: 768px)
+and (-webkit-min-device-pixel-ratio: 1) {
 
 
-      h1 {
-        font-size: 3.2rem;
-        margin: 1vh 0 0 0;
+  .agency {
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: 35vw 62vw;
+    grid-template-rows: 60vh 40vh;
+    grid-template-areas:
+      "name image"
+      "button image";
+  }
 
-      }
-    }
+  .agency_text {
+    padding: 0;
   }
 
   .agency_name {
-    padding:0 5vw ;
+    width: 30vw;
+    top: 20vh;
+    position: absolute;
+
 
     h3 {
-
+      font-size: 2.4rem;
     }
   }
+  .agency_button {
+    position: absolute;
+    width: 15vw;
+    top: -10vh;
+    left: 5vw;
+
+    a{
+      text-decoration: none;
+    }
+  }
+  .agency_sample {
+    width: 65vw;
+
+    img {
+      left: 0;
+      width: 100%;
+      position: absolute;
+    }
+  }
+
 
   .monica {
 
-    .agency_button {
-      margin-top: 6rem;
-
-    }
-
     .agency_sample {
-      width: 90vw;
-      height:55vh;
-      overflow: visible;
+      width: 65vw;
+      height:100vh;
 
       img {
-
+        left: 0;
+        top: 0;
+        width: 100%;
       }
     }
   }
 
+
   .tp {
-       .agency_name{
-      padding-top: 4rem;
+    color:$color-tp;
+
+    .agency_name{
+      background-color: transparent;
+      z-index: 3;
+    }
+    .agency_text{
+      background-color:transparent;
+    }
+
+    .agency_sample {
+      width: 65vw;
+      height:70vh;
+      overflow: visible;
+
+
+      img {
+        left: -15vw;
+        top: 5vh;
+        width: 110%;
+
       }
     }
 
 
-  .gmac {
-
-
     .agency_button {
-     margin-top: 3rem;
+      z-index: 3;
+      background-color: white;
 
-      }
+    }
+  }
 
+
+  .gmac {
+    background-color: #8e7229 ;
+
+
+    .agency_text {
+      padding: 0;
+    }
 
     .agency_sample {
-      width:80vw;
-      height:50vh;
+      width: 63vw;
+      height:100vh;
+      overflow: visible;
+
       img {
-left: 10vw;
-        top: 0;
+        left: -5vw;
+        top: 5vh;
+        width: 105%;
       }
     }
 
   }
 
   .iss {
-    background-color: #fff;
-
+    color: #01479F;
 
     .agency_name{
-      padding-top: 5vh;
-
+      background-color: transparent;
+    }
+    .agency_text{
+      background-color: transparent;
     }
 
     .agency_sample {
-      height: 40vh;
-      left: 5vw;
+      height: 100vh;
+      width: 63vw;
+      left: -5vw;
+      overflow: visible;
+
+      img{
+        object-fit: cover;
+        top: -50vh;
+      }
     }
 
     .agency_button {
-      margin: 3vh 0 1rem 0;
+     z-index: 3;
+
+      a{
+
+      }
     }
+
   }
 
   .aspen  {
-    background-color:#fff;
+   color:#004f2d;
     .agency_name{
-      padding-top: 5vh;
+      background-color: transparent;
     }
-
-    .agency_button {
-      margin-top: 90vh;
-      z-index: 9;
-
+    .agency_text{
+      background-color: transparent;
     }
-
 
     .agency_sample {
-      width: 60vw;
-      height:90vh;
+      width: 65vw;
+      height:100vh;
       overflow: visible;
-      left: 20vw;
+      left: 5vw;
 
+      img {
+        position: absolute;
+        left: -40;
+        top:12vh;
+        width: 40%;
+
+      }
     }
   }
+
   .contact{
-
-
-    h3{
-      font-size: 3.6rem;
-    }
+    background-color: #888888;
 
     .agency_button {
-      margin-top: 10rem;
+      top: 55vh;
 
     }
   }
 
 
-  #tp{
-
-    .portfolio_name{
-      height: 15vh;
-    }
-
-    .redefining{
-
-      .portfolio_image {
-        height:55vh;
-        width: 60%;
-        top: 5vh;
-
-        img{
-          top: -50;
-          left: 10vw;
-          width: 105%;
-
-        }
-      }
-    }
-
-    .icon{
-
-      .portfolio_image {
-        left: 15vw;
-
-        img{
-          width: 80%;
-        }
-      }
-
-      }
-
-    .collateral{
-
-      .portfolio_image {
-        left: 10vw;
-
-        img{
-          width: 80%;
-
-        }
-      }
-
-    }
-  }
-
-  #gmac{
-
-    .portfolio_name{
-      height: 15vh;
-    }
-
-    .portfolio_image {
-      left: 20vw;
-
-
-      img{
-
-        width: 75%;
-
-      }
-    }
-
-  }
-
-
-
-  #aspen{
-
-    .portfolio_name{
-      height: 15vh;
-
-    }
-
-    .portfolio_image {
-      height:50vh;
-      width: 80vw;
-      position: absolute;
-      top:30vh;
-      left: 20vw;
-
-      .small{
-        width: 65%;
-        left: 5vw;
-      }
-
-      img{
-        width:75%;
-
-      }
-    }
-  }
-  #iss {
-
-    .portfolio_name {
-      height: 15vh;
-    }
-  }
-
-
-    .fixed_port {
-    font-size: 2rem;
-
-  }
+  /*  portfolio pages  */
 
 
 
 
-
-
-
-
-
-
-
-  /* Styles */
+  /* END DESKTP */
 }
+
